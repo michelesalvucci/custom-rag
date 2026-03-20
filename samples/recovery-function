@@ -1,0 +1,3 @@
+You: come si chiama la funzione lambda che riprocessa i messaggi scartati dalle lambda sap in?
+
+Assistant: La funzione Lambda incaricata di riprocessare i messaggi scartati dalle Lambda SAP è chiamata `sap-in-recovery`. Questa funzione legge la cartella "validated-events" del bucket e, in base al nome del file, riprocessa il messaggio invocando la rispettiva funzione, come se si trattasse del trigger MSK.

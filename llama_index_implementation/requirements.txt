@@ -1,0 +1,22 @@
+# Core LlamaIndex
+llama-index-core
+llama-index-embeddings-huggingface
+llama-index-vector-stores-faiss
+llama-index-llms-ollama
+
+# Reranker (SentenceTransformerRerank is included in llama-index-core postprocessors)
+# No extra package needed - SentenceTransformerRerank comes from llama-index-core
+
+# FAISS
+faiss-cpu
+
+# LangChain text splitters
+langchain-text-splitters
+
+# Hugging Face
+sentence-transformers
+transformers
+torch
+
+# Environment
+python-dotenv

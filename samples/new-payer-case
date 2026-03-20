@@ -1,0 +1,35 @@
+You: il payer precedente è conservato? con che data di chiusura?
+
+Assistant: Sì, il payer precedente è conservato nel sistema. Quando arriva un nuovo payer e viene identificato un cambiamento, il record del payer precedente viene aggiornato per riflettere la sua chiusura.
+
+### Dettagli sulla Conservazione del Payer Precedente:
+
+1. **Chiusura del Payer Precedente**:
+   - Il record del payer precedente (ad esempio, `0020390968`) viene aggiornato impostando la data di chiusura (`fine_abil_payer`) alla data corrente (oggi). Questo segna il payer come non più attivo.
+
+2. **Data di Chiusura**:
+   - La data di chiusura è impostata a `CURRENT_TIMESTAMP`, che rappresenta la data e l'ora attuali al momento dell'elaborazione del cambiamento. Questo significa che il payer precedente è considerato chiuso a partire da oggi.
+
+### Esempio di Stato dei Dati:
+
+**Prima del Processo**:
+```
+gpq8_pv_storico_gestione (sales area 29175):
+- Payer: 0020390968
+- Inizio: 2025-01-01
+- Fine: 2999-12-31 (attivo)
+```
+
+**Dopo il Processo**:
+```
+gpq8_pv_storico_gestione (sales area 29175):
+- Record 1 - Payer: 0020390968
+  - Inizio: 2025-01-01
+  - Fine: [data odierna] (chiuso)
+
+- Record 2 - Payer: 002000584D (NUOVO)
+  - Inizio: 2026-01-01
+  - Fine: 2999-12-31 (attivo)
+```
+
+In questo modo, la storia del payer precedente è preservata nel database, consentendo di mantenere un registro cronologico delle relazioni di pagamento associate al punto vendita.
