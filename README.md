@@ -79,6 +79,8 @@ In practice, it does not change document retrieval from the vector index, but on
 
 ## How does it work
 
+![michele-salvucci-langchain-rag-diagram.png](michele-salvucci-langchain-rag-diagram.png)
+
 ### Document Loading
 Documents are loaded from files or folders using LangChain loaders:
 - `DirectoryLoader` for directories
